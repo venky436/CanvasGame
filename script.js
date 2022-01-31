@@ -156,8 +156,8 @@ function Diff_Animy(){
         let angle = Math.atan2(canvas.height / 2 - y, canvas.width / 2 - x);
 
         velocity = {
-          xx: Math.cos(angle) * 2,
-          yy: Math.sin(angle) * 2,
+          xx: Math.cos(angle) * 3,
+          yy: Math.sin(angle) * 3,
         };
         let color = ['red','blue','green','orange','yellow','gray','skyblue']
 
