@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+    body{ margin:0;background-color: black;}
+    /* #canvas{
+        display:block;
+        width:100vmin;
+        height : 100vmin
+    } */
+    .score_main{
+      position: fixed;
+      top:2%;
+      left: 2%;
+      user-select: none;
+    }
+    .score_high{
+      position: fixed;
+      top:2%;
+      right: 2%;
+      user-select: none;
+    }
+    .score_main h2,.score_high h2{ color:white}
+    .container{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      min-width: 600px;
+      min-height: 250px;
+      background-color: rgb(142, 179, 56);
+      /* display:none; */
+      border-radius: 1rem;
+      
+
+    }
+    .ro{
+      display:flex;
+      align-items: center;
+      justify-content:center;
+      flex-direction: column;
+    }
+    .btn{
+      width:80%;
+      height:60px;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+    .btn button{ 
+      width:80%;
+      height:100%;
+      border-radius: 20px;
+      background-color:blue;
+      color:aliceblue;
+      font-size: 2rem;
+      transition:all 1s;
+    }
+    .btn button:hover{
+      background-color:green;
+
+    }
+   .ro p{ font-size: 1.8rem;display:block;margin: 0 0 1rem 0;}
+   .ro h1{ font-size: 3rem;
+     margin: 0.5rem 0 0 0
+  
+  }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="ro">
+        <h1 id='end_score'>0</h1>
+        <p>Points</p>
+        <div class="btn">
+          <button id='start'>Start Game</button>
+        </div>
+    </div>
+  </div>
+
+  <div class="score_main">
+    <h2 ><span>Score :</span> <span id='score'>0</span></h2>
+  </div>
+    <!-- <div class="score_high">
+    <h2 ><span>High Score :</span> <span id='score_high' ></span></h2>
+  </div> -->
+    
+<canvas id='canvas'></canvas>
+<script src='script.js'></script>
+</body>
+</html>
