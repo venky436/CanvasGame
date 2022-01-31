@@ -6,7 +6,11 @@ canvas.height = innerHeight
 
 
 
+
+
 let score = document.querySelector('#score')
+let audio = document.querySelector("#audio");
+
 let container = document.querySelector(".container");
 
 let end_score = document.querySelector('#end_score')
@@ -64,15 +68,15 @@ let sc = 0;
 
 // high_score.innerHTML = sc
 
-
+// ennimy_array = [];
  function init(){
-    particle_array = [];
-    ennimy_array = [];
-     explose_array = [];
-     sc = 0;
-     score.innerHTML = sc
-     end_score.innerHTML = sc
- 
+   particle_array = [];
+   ennimy_array = [];
+
+   explose_array = [];
+   sc = 0;
+   score.innerHTML = sc;
+   end_score.innerHTML = sc;
  }
  
 //  Enimy..............
@@ -137,7 +141,7 @@ function Diff_Animy(){
    
      let count = 0;
 
-  let iii =   setInterval(()=>{
+  let iii =  setInterval(()=>{
       count+=1
       // console.log(count)
         let radius = Math.random () * (30 - 4) + 4;
@@ -209,6 +213,7 @@ function Animatio(){
            
           //  End game///////////////////////////////
             cancelAnimationFrame(animationId)
+            audio.pause()
             container.style.display = 'block'
             end_score.innerHTML = sc
         }
@@ -288,9 +293,11 @@ document.addEventListener('click',(e)=>{
 
 
 start.addEventListener('click',()=>{
-     init()
-    Animatio();
+    init()
+    audio.play()
     Diff_Animy();
+    Animatio();
+    
      container.style.display = "none";
 })
 
